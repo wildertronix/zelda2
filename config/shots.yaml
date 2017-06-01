@@ -8,10 +8,9 @@ shots:
   right_inlane:
     switch: s_right_inlane
   right_outlane:
-    swtich: s_right_outlane
-
-  modestart:
-    switch:  s_modestart
+    switch: s_right_outlane
+  modestartmade:
+    switch: s_modestart
     show_tokens:
        led: l_modestart
 
@@ -28,9 +27,9 @@ shots:
 
     #l_loop
   l_loop:
-    switch: l_opt
+    switch: d_loop
 
-    #d_loop
+    #l_opt
   d_loop:
     swtich: d_opt
 
