@@ -1,0 +1,31 @@
+#show_version=4
+- duration: 1
+  leds:
+    l_item1: red
+    l_item2: red
+    l_item3: ff0000
+- duration: 1
+  leds:
+    l_z: ff6600
+    l_e: ff6600
+    l_l: ff6600
+- duration: 1
+  leds:
+    l_d: ffcc00
+    l_a: ffcc00
+    l_mode3: ffcc00
+- duration: 1
+  leds:
+    l_mode1: lime
+    l_mode2: 00ff00
+    l_mode3: 00ff00
+- duration: 1
+  leds:
+    l_mode1: blue
+    l_mode2: 0000ff
+    l_mode3: 0000ff
+- duration: 1
+  leds:
+    l_mode1: ff00aa
+    l_mode2: ff00aa
+    l_mode3: ff00aa

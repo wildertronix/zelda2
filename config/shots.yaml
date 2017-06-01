@@ -1,0 +1,58 @@
+# congif_version=4
+
+shots:
+  left_outlane:
+    switch: s_left_outlane
+  left_inlane:
+    swtich: s_left_inlane
+  right_inlane:
+    switch: s_right_inlane
+  right_outlane:
+    swtich: s_right_outlane
+
+  modestart:
+    switch:  s_modestart
+    show_tokens:
+       led: l_modestart
+
+
+
+
+    #z_loop
+  z_loop:
+    switch: z_opt
+
+    #e_loop
+  e_loop:
+    swtich: e_opt
+
+    #l_loop
+  l_loop:
+    switch: l_opt
+
+    #d_loop
+  d_loop:
+    swtich: d_opt
+
+    #a_loop
+  a_loop: 
+    switch: spinner
+
+
+    #droptargets
+  drop1:
+    switch: 
+        
+  drop2:
+    switch:
+        
+  drop3:
+    switch:
+
+        
+        
+
+        
+
+
+

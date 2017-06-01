@@ -1,0 +1,591 @@
+# config_version=4
+# Zelda
+game:
+  balls_per_game: 3
+  allow_start_with_ball_in_drain: True
+  allow_start_with_loose_balls: True
+
+machine:
+  balls_installed: 4
+ 
+
+hardware:
+  platform: fast
+  driverboards: fast
+
+fast:
+  ports: com4, com5
+
+modes:
+- base
+- attract
+
+switches:
+  leftflipperbutton:
+    events_when_activated: powerup|2s
+    events_when_deactivated:
+    - flipoff
+    number: 0-0
+    tags: flip
+  rightflipperbutton:
+    events_when_activated: powerup|2s
+    events_when_deactivated:
+    - flipoff
+    number: 0-1
+    tags: flip
+  trough1:
+    number: 0-4
+    tags: drain
+  trough2:
+    number: 0-5
+  plungerlane:
+    number: 0-8
+  start:
+    number: 0-18
+    tags: start
+  s_right_inlane:
+    number: 0-9
+    tags: playfield_active, points_please, inlane
+  s_left_inlane:
+    number: 0-12
+    tags: playfield_active, points_please, inlane
+  s_right_outlane:
+    number: 0-10
+    tags: playfield_active, outlane
+  s_left_outlane:
+    number: 0-13
+    tags: playfield_active, outlane
+  s_lightmb:
+    number: 0-14
+    tags: playfield_active
+  s_optoz:
+    number: 1-8
+    tags: playfield_active
+  s_optoz1:
+    number: 1-9
+    tags: playfield_active
+  s_optoe:
+    number: 1-10
+    tags: playfield_active
+  s_optol:
+    number: 1-11
+    tags: playfield_active
+  s_optod:
+    number: 1-12
+    tags: playfield_active
+  s_spinner:
+    number: 0-11
+    tags: playfield_active
+  s_popexit:
+    number: 0-15
+    tags: playfield_active
+  s_optoa:
+    number: 1-13
+    tags: playfield_active
+  s_droptarget1:
+    number: 1-0
+    tags: playfield_active, drop
+  s_droptarget2:
+    number: 1-1
+    tags: playfield_active, drop
+  s_droptarget3:
+    number: 1-2
+    tags: playfield_active, drop
+  s_abyss:
+    number: 0-7
+  s_modestart:
+    number: 0-6
+  s_leftslingshot:
+    number: 0-2
+    tags: slingshot, playfield_active
+  s_rightslingshot:
+    number: 0-3
+    tags: slingshot, playfield_active
+  s_toppop:
+    number: 1-4
+    tags: jets
+  s_leftpop: 
+    number: 1-5
+    tags: jets
+  s_rightpop:
+    number: 1-6
+    tags: jets
+  s_lostwoods:
+    number: 1-7
+    tags:
+  s_cranehole:
+    number: 1-3
+  s_coin1:
+    number: 0-17
+    tags: 
+  s_coin2:
+    number: 0-19
+    tags:
+
+
+
+coils:
+  flippertopleftmain:
+    number: 0-0
+    pulse_ms: 20
+  flippertoplefthold:
+    number: 0-1
+    pulse_ms: 20
+    allow_enable: true
+  flipperleftmain:
+    number: 0-2
+    pulse_ms: 20
+  flipperrightmain:
+    number: 0-3
+    pulse_ms: 20  
+  flipperlefthold:
+    number: 0-4
+    pulse_ms: 20 
+    allow_enable: true 
+  flipperrighthold:
+    number: 0-5
+    pulse_ms: 20 
+    allow_enable: true 
+  flippertoprightmain:
+    number: 0-6
+    pulse_ms: 20
+  flippertoprighthold:
+    number: 0-7
+    pulse_ms: 20
+    allow_enable: true
+  leftslingshot:
+    number: 1-0
+    pulse_ms: 20
+  rightslingshot:
+    number: 1-1
+    pulse_ms: 20
+  draineject:
+    number: 1-13
+    pulse_ms: 250
+    allow_enable: true
+  troughrelease:
+    number: 1-3 
+    pulse_ms: 500
+    allow_enable: true
+  droptargetreset:
+    number: 1-4
+    pulse_ms: 60
+  modestart:
+    number: 1-5
+    pulse_ms: 60
+  abyss:
+    number: 1-6
+    pulse_ms: 60
+  crane:
+    number: 1-7
+  toppop:
+    number: 1-8
+    pulse_ms: 20
+  rightpop:
+    number: 1-9
+    pulse_ms: 20
+  leftpop:
+    number: 1-10
+    pulse_ms: 20
+  lostwoods:
+    number: 1-11
+    pulse_ms: 60
+  catapulthole:
+    number: 1-12
+    pulse_ms: 60
+
+
+
+
+
+autofire_coils:
+  left_slingshot:
+    coil: leftslingshot
+    switch: s_leftslingshot
+  right_slingshot:
+    coil: rightslingshot
+    switch: s_rightslingshot
+  topjet:
+    coil: toppop
+    switch: s_toppop
+  leftjet:
+    coil: leftpop
+    switch: s_leftpop
+  rightjet:
+    coil: rightpop
+    switch: s_rightpop
+
+flippers:
+  leftflipper:
+    main_coil: flipperLeftMain
+    hold_coil: flipperLeftHold
+    activation_switch: leftFlipperButton
+  rightflipper:
+    main_coil: flipperRightMain
+    hold_coil: flipperRightHold
+    activation_switch: rightFlipperButton
+  topleftflipper:
+    main_coil: flippertopleftmain
+    hold_coil: flippertoplefthold
+    activation_switch: leftflipperbutton
+  toprightflipper:
+    main_coil: flippertoprightmain
+    hold_coil: flippertoprighthold
+    activation_switch: rightflipperbutton
+
+
+virtual_platform_start_active_switches: trough1 trough2
+
+keyboard:
+  z:
+    switch: leftFlipperButton
+  /:
+    switch: rightFlipperButton
+  1:
+    switch: trough1
+    toggle: true
+  2:
+    switch: trough2
+    toggle: true
+  p:
+    switch: plungerLane
+    toggle: true
+  s:
+    switch: start
+  
+  q:
+    switch: s_right_inlane
+  w:
+    switch: s_leftslingshot
+  e:
+    switch: s_rightpop
+  r:
+    switch: s_droptarget1
+
+
+
+ball_devices:
+  bd_drain:
+    ball_switches: trough1 
+    eject_coil: draineject
+    eject_targets: bd_trough
+    eject_timeouts: 2s
+    confirm_eject_type: target
+    tags: drain
+    debug: true
+  bd_trough:
+    entrance_switch: trough2
+    entrance_switch_full_timeout: 3s
+    ball_capacity: 3
+    eject_coil: troughrelease
+    eject_targets: bd_plunger_lane
+    confirm_eject_type: target
+    tags: trough, home
+    debug: true
+  bd_plunger_lane:
+    ball_switches: plungerLane
+    tags: ball_add_live
+    mechanical_eject: true
+    debug: true
+  bd_lostwoods:
+    ball_switches: s_lostwoods
+    eject_coil: lostwoods
+  bd_cranehole:
+    ball_switches: s_cranehole
+    eject_coil: catapulthole
+  bd_abyss:
+    ball_switches: s_abyss
+    eject_coil: abyss
+  bd_modestart:
+    ball_switches: s_modestart
+    eject_coil: modestart
+
+
+drop_targets:
+  dt_drop1:
+    switch: s_droptarget1
+  dt_drop2:
+    switch: s_droptarget2
+  dt_drop3:
+    switch: s_droptarget3
+
+drop_target_banks:
+  maindrop:
+    drop_targets:
+    - dt_drop1
+    - dt_drop2
+    - dt_drop3
+    reset_on_complete: 1s
+    reset_coils: droptargetreset
+    reset_events: ball_starting
+
+
+   
+   
+
+physical_dmd:
+  width: 128
+  height: 32
+
+window:
+  title: Legend of Zelda
+
+slide_player:
+  ball_live_added: ball_added
+  ball_started: ball_started
+  mc_ready:
+    window_slide_1:
+      target: window
+
+displays:
+  window:
+    height: 600
+    width: 800
+  dmd:
+    width: 128
+    height: 32
+    default: true
+
+slides:
+  window_slide_1:
+  - type: dmd
+    width: 512
+    height: 128
+    pixel_color: ff6600
+    dark_color: 2200ff
+  - type: rectangle
+    width: 516
+    height: 132
+    color: aaaaaa
+  - type: text
+    style: tall title
+    text: Zelda
+    anchor_y: top
+    y: top-60
+    font_size: 100
+    z: 1
+    color: ee9900
+  ball_added:
+    - type: Text
+      text: BALL LIVE!
+      expire: 2s
+  ball_started:
+    - type: Text
+      text: PLAYER (player) BALL (ball)
+      expire: 2s
+
+sound_system:
+    master_volume: 0.75
+    tracks:
+       music:
+          simultaneous_sounds: 2
+          volume: 0.5
+       voice:
+          simultaneous_sounds: 1
+          volume: 0.7
+       sfx:
+          simultaneous_sounds: 8
+          volume: 0.4
+
+assets:
+    sounds:
+        default:
+            load: on_demand
+        music:
+            track: music
+        sfx:
+            track: sfx
+        voice:
+            track: voice
+
+widget_styles:
+  default:
+    font_name: Quadrit
+    font_size: 10
+    crop_top: 2
+    crop_bottom: 3
+  space title huge:
+    font_name: DEADJIM
+    font_size: 29
+    antialias: true
+    crop_top: 3
+    crop_bottom: 3
+  space title:
+    font_name: DEADJIM
+    font_size: 21
+    antialias: true
+    crop_top: 2
+    crop_bottom: 3
+  medium:
+    font_name: pixelmix
+    font_size: 8
+    crop_top: 1
+    crop_bottom: 1
+  small:
+    font_name: smallest_pixel-7
+    font_size: 9
+    crop_top: 2
+    crop_bottom: 3
+  tall title:
+    font_name: big_noodle_titling
+    font_size: 20
+
+shot_profiles:
+   tri_state:
+       states:
+       - name: unlit
+         show: off
+       - name: lit
+         show: flash
+       - name: complete
+         show: on 
+   on_off:
+       states:
+       - name: unlit
+         show: off
+       - name: lit
+         show: on
+   flash:
+       states:
+       - name: lit
+         show: flash
+       - name: unlit
+         show: off
+         
+
+leds:
+    l_l:
+        number: 0
+    l_litem:
+        number: 1
+    l_lrupee:
+        number: 2
+    l_e:
+        number: 3
+    l_eitem:
+        number: 4
+    l_erupee:
+        number: 5
+    l_drupee:
+        number: 6
+    l_ditem:
+        number: 7
+    l_d:
+        number: 8
+    l_mastersword:
+        number: 9
+    l_10:
+        number: 10
+    l_boss:
+        number: 11
+    l_jackpot:
+        number: 12
+    l_magicmirror:
+        number: 13
+    l_14:
+        number: 14
+    l_ganon:
+        number: 15
+    l_cranerupee:
+        number: 16
+    l_3x:
+        number: 17
+    l_2x:
+        number: 18
+    l_z:
+        number: 19
+    l_zitem:
+        number: 20
+    l_heart:
+        number: 21
+    l_heart2:
+        number: 22
+    l_zrupee:
+        number: 23
+    l_5:
+        number: 24
+    l_heart1:
+        number: 25
+    l_lout:
+        number: 26
+    l_b:
+        number: 27
+    l_o:
+        number: 28
+    l_powerstrike:
+        number: 29
+    l_item1:
+        number: 30
+    l_item2:
+        number: 31
+    l_item3:
+        number: 32
+    l_item4:
+        number: 33
+    l_item5:
+        number: 34
+    l_mode1:
+        number: 35
+    l_mode4:
+        number: 36
+    l_mode6:
+        number: 37
+    l_arrow1:
+        number: 38
+    l_arrow2:
+        number: 39
+    l_arrow3:
+        number: 40
+    l_mode5:
+        number: 41
+    l_mode2:
+        number: 42
+    l_mode3:
+        number: 43
+    l_item10:
+        number: 44
+    l_item9:
+        number: 45
+    l_item8:
+        number: 46
+    l_item7:
+        number: 47
+    l_item6:
+        number: 48
+    l_shootagain:
+        number: 49
+    l_modestart:
+        number: 50
+    l_modetstart1:
+        number: 51
+    l_33:
+        number: 52
+    l_arupee:
+        number: 53
+    l_aitem:
+        number: 54
+    l_a:
+        number: 55
+    l_plungerlane3:
+        number: 56
+    l_plungerlane2:
+        number: 57
+    l_plungerlane1:
+        number: 58
+    l_rout:
+        number: 59
+    l_modestart2:
+        number: 60
+    l_modestart3:
+        number: 61
+    l_b2:
+        number: 62
+    l_m:
+        number: 63
+    l_modestart4:
+        number: 64
+
+
+
+
+

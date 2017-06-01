@@ -1,0 +1,96 @@
+# config_version=4
+mode:
+  start_events: ball_starting
+  priority: 100
+
+slide_player:
+  mode_base_started: slide_2
+  player_add_success:
+    slide_3:
+      expire: 2s
+      priority: 1
+
+sound_player:
+  mode_base_started:
+    timeoffalling:
+      loops: -1
+      volume: 0.5
+    rainout:
+      loops: -1
+      volume: 0.5
+
+  sw_inlane: inlanefx
+  sw_slingshot: slingshot
+  sw_jets: jets
+  powerup: charge
+  flipoff: chargeshot
+  sw_drop: shatter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+scoring:
+  sw_inlane:
+    score: 5000
+  sw_slingshot:
+    score: 500
+  sw_jets:
+    score: 550
+  sw_drop:
+    score: 2250
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+slides:
+
+  slide_2:
+  - type: text
+    text: (score)
+    number_grouping: true
+    min_digits: 2
+  - type: text
+    text: PLAYER (number)
+    anchor_y: bottom
+    anchor_x: left
+    style: small
+    x: left
+    y: bottom
+  - type: text
+    text: BALL (ball)
+    anchor_y: bottom
+    anchor_x: right
+    style: small
+    x: right
+    y: bottom
+
+  slide_3:
+  - type: text
+    text: PLAYER (num) ADDED

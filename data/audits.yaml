@@ -1,0 +1,61 @@
+events:
+  game_ended: 7
+  game_started: 114
+player:
+  score:
+    average: 25414.285714285714
+    top:
+    - 66050
+    - 52050
+    - 28100
+    - 22200
+    - 5000
+    - 4500
+    - 0
+    total: 7
+switches:
+  leftflipperbutton: 122
+  plungerlane: 74
+  plungerlaunch: 0
+  rightflipperbutton: 115
+  s_abyss: 18
+  s_cavestar: 0
+  s_coin1: 0
+  s_coin2: 0
+  s_cranehole: 5
+  s_droptarget1: 11
+  s_droptarget2: 10
+  s_droptarget3: 11
+  s_left_inlane: 16
+  s_left_outlane: 4
+  s_leftpop: 8
+  s_leftslingshot: 13
+  s_lightmb: 1
+  s_lostwoods: 3
+  s_lostwoodsopto: 0
+  s_modestart: 32
+  s_optoa: 0
+  s_optod: 0
+  s_optoe: 0
+  s_optol: 0
+  s_optom: 0
+  s_optot: 0
+  s_optou: 0
+  s_optoz: 0
+  s_optoz1: 0
+  s_popexit: 0
+  s_rampopto: 0
+  s_right_inlane: 31
+  s_right_outlane: 8
+  s_rightpop: 44
+  s_rightslingshot: 14
+  s_spinner: 0
+  s_toppop: 22
+  start: 0
+  trough1: 35
+  trough2: 79
+  trough3: 0
+  trough4: 0
+  trough5: 1
+  trough6: 0
+  troughjam: 0
