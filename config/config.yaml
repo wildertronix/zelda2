@@ -19,6 +19,7 @@ fast:
 modes:
 - base
 - attract
+- escape
 
 switches:
   leftflipperbutton:
@@ -319,6 +320,14 @@ drop_target_banks:
     reset_coils: droptargetreset
     reset_events: ball_starting
 
+
+
+
+shots:
+ modestartmade:
+    switch: s_modestart
+    show_tokens:
+       led: l_modestart
 
    
    
