@@ -1,18 +1,15 @@
 # config_version=4
 mode:
-  start_events: modestart_hit
-  priority: 110
+  start_events: modestartmade_hit
+  priority: 200
 
 
-  sound_player:
+sound_player:
     mode_escape_started:
       hyrulecastle:
         loops: -1
-      volume: 0.5
+        volume: 0.5
       rainin:
-      loops: 3
-      volume: 0.5
-
-
-  
-
+        loops: 3
+        volume: 0.5
+     
